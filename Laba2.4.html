@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="utf-8">
+ <title>Мой эксперимент с CSS</title>
+ <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+ <h1>Лаба2</h1>
+	  
+<div class="row">
+<div class="col s2">
+<div class="row">
+    <form class="col s12"> 
+     
+      <div class="row">
+                <div class="input-field col s12"> 
+          <input id="name" type="text" class="validate">
+          <label for="name">Имя</label>
+        </div>
+	  </div>
+
+	  <div class="row">
+		<div class="input-field col s12">
+          <input id="age" type="text" class="validate">
+          <label for="age">Возраст</label>
+        </div>
+	  </div>
+
+	  <div class="row">
+		<div class="input-field col s12">
+          <input id="sex" type="text" class="validate">
+          <label for="sex">Пол</label>
+        </div>
+	  </div>
+		<p> <input type="checkbox" id="education"> <label for="education">Высшее образование</label> </p>
+	  	<p> <input type="checkbox" id="mathematic"> <label for="mathematic">Знание математики</label> </p>
+	  	<p> <input type="checkbox" id="asu"> <label for="asu">Знание АСУ ТП</label> </p>
+	  	<p> <input type="checkbox" id="cutting"> <label for="cutting">Знание теории резания</label> </p>
+	  	<p> <input type="checkbox" id="programming"> <label for="programming">Знание программирования</label> </p>
+		<p> <input type="button" id="btn" value="Анкета заполнена" onclick="check()" </p>
+		<div id="div1">(если хотите узнать, подходите ли вы нам)</div>
+	</form>
+
+<script>
+	
+        if (document.getElementById("name").value == "" || 
+            document.getElementById("age").value == "" || 
+            document.getElementById("sex").value == "" )
+    { document.getElementById('btn').disabled = true;}
+else if (document.getElementById("name").value != "" || 
+            document.getElementById("age").value != "" || 
+            document.getElementById("sex").value != "" )
+{
+document.getElementById('btn').disabled  = false;
+}
+	function check()
+	{
+	if (document.getElementById("education").checked == false || 
+               document.getElementById("mathematic").checked == false ||
+               document.getElementById("asu").checked == false ||
+               document.getElementById("cutting").checked == false || 
+               document.getElementById("programming").checked == false)
+	{
+           document.getElementById("div1").innerHTML ='<p>Сожалеем, но Вы нам не подходите</p>'
+        document.getElementById("div1").style.display = "block";
+	 }
+        else
+        {
+          document.getElementById("div1").innerHTML ='<p>Вы нам подошли</p>'
+      	  document.getElementById("div1").style.display = "block";
+	}
+	}
+</script>
+	
+</div>
+</div>
+</div>
+    </body>
+  </html>
